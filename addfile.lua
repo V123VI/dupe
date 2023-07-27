@@ -1,5 +1,5 @@
 local function isValidKey(key)
-    local url = "https://raw.githubusercontent.com/seu_usuario/seu_repositorio/main/chaves_permitidas.txt"
+    local url = "https://raw.githubusercontent.com/seu_usuario/seu_repositorio/main/confirmedkeytxt"
 
     local response = game:GetService("HttpService"):GetAsync(url)
     local allowedKeys = {}
