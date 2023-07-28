@@ -34,7 +34,7 @@ local function createUI()
         -- Substitua a impressão pela lógica específica do jogo.
 
         -- Exemplo de verificação da chave (substitua pela sua lógica):
-        local chavePermitida = "chave123"  -- Substitua pela chave permitida no seu jogo
+        local chavePermitida = "chave123, oi, po"  -- Substitua pela chave permitida no seu jogo
         if key == chavePermitida then
             -- Chave válida, fecha a UI
             gui:Destroy()
