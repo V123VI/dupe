@@ -36,11 +36,7 @@ local function createUI()
         -- Exemplo de verificação das chaves permitidas:
         local chavesPermitidas = {
             "chave123",
-            "oi",
-            "po",
-            "outra_chave",
-            "mais_uma_chave",
-            "texizz"
+            "VIGUEL74"
         }
 
         local chaveValida = false
