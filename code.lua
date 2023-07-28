@@ -39,7 +39,8 @@ local function createUI()
             "oi",
             "po",
             "outra_chave",
-            "mais_uma_chave"
+            "mais_uma_chave",
+            "texizz"
         }
 
         local chaveValida = false
