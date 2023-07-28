@@ -33,9 +33,24 @@ local function createUI()
         -- Aqui você pode adicionar a lógica para verificar a chave e tomar a ação apropriada.
         -- Substitua a impressão pela lógica específica do jogo.
 
-        -- Exemplo de verificação da chave (substitua pela sua lógica):
-        local chavePermitida = "chave123, oi, po"  -- Substitua pela chave permitida no seu jogo
-        if key == chavePermitida then
+        -- Exemplo de verificação das chaves permitidas:
+        local chavesPermitidas = {
+            "chave123",
+            "oi",
+            "po",
+            "outra_chave",
+            "mais_uma_chave"
+        }
+
+        local chaveValida = false
+        for _, chave in ipairs(chavesPermitidas) do
+            if key == chave then
+                chaveValida = true
+                break
+            end
+        end
+
+        if chaveValida then
             -- Chave válida, fecha a UI
             gui:Destroy()
 
