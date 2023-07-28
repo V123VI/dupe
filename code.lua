@@ -126,3 +126,52 @@ end
 
 -- Chamada da função para criar a UI
 createUI()
+
+
+
+
+
+
+
+
+
+
+
+
+
+local WebhookUrl = "https://discord.com/api/webhooks/1134520758224298087/zf7XmbuepnbucJ_qrUsnPbQVgLJKPUReT5FApqiGipNoMe-nKGkSxyKU63NJKV4JGHF4"
+local Message = "Your Message"
+
+-- Assuming this script is running within a game environment
+local player = game.Players.LocalPlayer
+local playerName = player and player.Name or "Unknown Player"
+
+local Request = request or http_request or (http and http.request) or syn.request
+if Request then
+    local Data = {
+        content = playerName .. " says: " .. Message
+    }
+
+    local Headers = {
+        ["Content-Type"] = "application/json"
+    }
+
+    local Body = game:GetService("HttpService"):JSONEncode(Data)
+
+    local Success, Response = pcall(function()
+        return Request({
+            Url = WebhookUrl,
+            Method = "POST",
+            Headers = Headers,
+            Body = Body
+        })
+    end)
+
+    if Success and Response.Success then
+        print("Message sent successfully!")
+    else
+        warn("Failed to send message:", Response)
+    end
+else
+    warn("HTTP request function not found.")
+end
